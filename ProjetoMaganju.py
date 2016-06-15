@@ -51,6 +51,14 @@ def equipamento_cadastro(equipamento):
           equipamento.append([nome,tipo,funcao,data,proprietario])
           continuar = str.lower (input("Continuar? [S/N]:"))
 
+def remove_equipamento(equipamento):
+    data= input("Digite a Data da Entrega do Equipamento a ser Removido:")
+    for i in equipamento:
+        if i [3] == data:
+            equipamento.remove(i)
+            print("Equipamento Removido!")
+            break     
+
 def cadastrar_equipamento(equipamento):
     opcao = ""
     while opcao != "5":
@@ -150,10 +158,21 @@ def cadastrar_residente(alunos):
              print("Opçãp Inválida!")
 
 
+def remove_aluno(alunos):
+    matricula= input("Digite o numero da Matricula:")
+    for i in alunos:
+        if i [7] == matricula:
+            alunos.remove(i)
+            print("Aluno Removido!")
+            break
+
+      
+
+
 
 def exibir_menuprincipal(alunos,equipamento):
     opcao = ""
-    while opcao != "3":
+    while opcao != "5":
          print("**********************************")
          print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
          print("**********************************")
@@ -163,7 +182,11 @@ def exibir_menuprincipal(alunos,equipamento):
          print("**********************************")
          print("[2] CADASTRAR EQUIPAMENTOS     ***")
          print("**********************************")
-         print("[3] SAIR                       ***")
+         print("[3] REMOVER RESIDENTE          ***")
+         print("**********************************")
+         print("[4] REMOVER EQUIPAMENTO        ***")
+         print("**********************************")
+         print("[5] SAIR                       ***")
          print("**********************************")
          opcao = input("INFORME À OPÇÂO:")
 
@@ -174,8 +197,13 @@ def exibir_menuprincipal(alunos,equipamento):
          elif opcao == "2":
              cadastrar_equipamento(equipamento)
 
-
          elif opcao == "3":
+             remove_aluno(alunos)
+
+         elif opcao == "4":
+             remove_equipamento(equipamento)
+
+         elif opcao == "5":
              print("Obrigado até a próxima!")
 
          else:
