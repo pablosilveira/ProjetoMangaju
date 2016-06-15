@@ -1,51 +1,57 @@
-def listar_quarto():
+def listar_quartos(quarto):
     print("**********************************")
     print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
     print("**********************************")
     print("***    QUARTOS CADASTRADOS     ***")
     print("**********************************")
-    for i in range(len(quarto)):
-        print(i+1,":"+quarto[i])
+    dados = ["Numero","Pessoa","Tipo","Nome"]
+    for i in quarto:
+        for x in range(len(i)):
+            print(" "+dados[x]+": "+i[x])
 
-def quarto_cadastro():
-    entrada = "s"
-    while entrada == "s":
+def quarto_cadastro(quarto):
+    continuar = "s"
+    while continuar == "s":
           print("**********************************")
           print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
           print("**********************************")
           print("***     CADASTRO DE QUARTOS    ***")
           print("**********************************")
-          quarto.append(input("NUMERO DE QUARTOS:"))
-          quarto.append(input("QUANTAS PESSOAS POR QUARTO:"))
-          quarto.append(input("TIPO DE QUARTO:"))
-          quarto.append(input("NOME DAS PESSOAS DO QUARTO:"))
-          entrada = input("Continuar? [S/N]:")
+          numero = input("NUMERO DE QUARTOS:")
+          pessoa = input("QUANTAS PESSOAS POR QUARTO:")
+          tipo = input("TIPO DE QUARTO:")
+          nome = input("NOME DAS PESSOAS DO QUARTO:")
+          quarto.append([numero,pessoa,tipo,nome])
+          continuar = str.lower (input("Continuar? [S/N]:"))
 
-def listar_equipamento():
+def listar_equipamento(equipamento):
     print("**********************************")
     print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
     print("**********************************")
     print("***  EQUIPAMENTOS CADASTRADOS  ***")
     print("**********************************")
-    for i in range(len(equipamento)):
-        print(i+1,":"+equipamento[i])
+    dados = ["Nome","Tipo","Funcao","Data","Proprietario"]
+    for i in equipamento:
+        for x in range(len(i)):
+            print(" "+dados[x]+": "+i[x])
 
-def equipamento_cadastro():
-    entrada = "s"
-    while entrada == "s":
+def equipamento_cadastro(equipamento):
+    continuar = "s"
+    while continuar == "s":
           print("**********************************")
           print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
           print("**********************************")
           print("***  CADASTRO DE EQUIPAMENTOS  ***")
           print("**********************************")
-          equipamento.append(input("NOME DO EQUIPAMENTO:"))
-          equipamento.append(input("TIPO DO EQUIPAMENTO:"))
-          equipamento.append(input("FUNÇÃO DO EQUIPAMENTO:"))
-          equipamento.append(input("DATA DA ENTREGA DO EQUIPAMENTO:"))
-          equipamento.append(input("PROPRIETÀRIO DO EQUIPAMENTO:"))
-          entrada = input("Continuar? [S/N]:")
+          nome = input("NOME DO EQUIPAMENTO:")
+          tipo = input("TIPO DE EQUIPAMENTO:")
+          funcao = input("FUNÇÂO DO EQUIPAMENTO:")
+          data = input("DATA DA ENTREGA DO EQUIPAMENTO:")
+          proprietario = input("PROPRIETÁRIO DO EQUIPAMENTO:")
+          equipamento.append([nome,tipo,funcao,data,proprietario])
+          continuar = str.lower (input("Continuar? [S/N]:"))
 
-def cadastrar_equipamento():
+def cadastrar_equipamento(equipamento):
     opcao = ""
     while opcao != "5":
          print("**********************************")
@@ -66,16 +72,16 @@ def cadastrar_equipamento():
          opcao = input("INFORME À OPÇÂO:")
 
          if opcao == "1":
-             equipamento_cadastro()
+             equipamento_cadastro(equipamento)
          
          elif opcao == "2":
-             listar_equipamento()
+             listar_equipamento(equipamento)
      
          elif opcao == "3":
-             quarto_cadastro()
+             quarto_cadastro(quarto)
 
          elif opcao == "4":
-             listar_quartos()
+             listar_quartos(quarto)
 
          elif opcao == "5":
              print("Obrigado até a próxima!")
@@ -83,38 +89,41 @@ def cadastrar_equipamento():
          else:
              print("Opçãp Inválida!")
 
-def listar_aluno():
+def listar_aluno(alunos):
     print("**********************************")
     print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
     print("**********************************")
     print("***   RESIDENTES CADASTRADOS   ***")
     print("**********************************")
-    for i in range(len(nome)):
-        print(i+1,":"+nome[i])
+    dados = ["Nome","Rg","Cpf","Data","Cidade","Estado","Nacionalidade","Matricula","Curso","Fone","Email"]
+    for i in alunos:
+        for x in range(len(i)):
+            print(" "+dados[x]+": "+i[x])
 
-def cadastrar_aluno():
-    entrada = "s"
-    while entrada == "s":
+def cadastrar_aluno(alunos):
+    continuar = "s"
+    while continuar == "s":
           print("**********************************")
           print("*** RESIDÊNCIA MANGAJU UFPB RT ***")
           print("**********************************")
           print("***   CADASTRO DE RESIDENTES   ***")
           print("**********************************")
-          nome.append(input("NOME DO ALUNO:"))
-          nome.append(input("RG:"))
-          nome.append(input("CPF:"))
-          nome.append(input("DATA DE NASCIMENTO:"))
-          nome.append(input("SEXO:"))
-          nome.append(input("CIDADE:"))
-          nome.append(input("ESTADO:"))
-          nome.append(input("NACIONALIDADE:"))
-          nome.append(input("MATRICULA:"))
-          nome.append(input("CURSO:"))
-          nome.append(input("FONE:"))
-          nome.append(input("EMAIL:"))
-          entrada = input("Continuar? [S/N]:")
+          nome = input("NOME DO ALUNO:")
+          rg = input("RG:")
+          cpf = input("CPF:")
+          data = input("DATA DE NASCIMENTO:")
+          sexo = input("SEXO:")
+          cidade = input("CIDADE:")
+          estado = input("ESTADO:")
+          nacionalidade = input("NACIONALIDADE:")
+          matricula = input("MATRICULA:")
+          curso = input("CURSO:")
+          fone = input("FONE:")
+          email = input("EMAIL:")
+          alunos.append([nome,rg,cpf,data,cidade,estado,nacionalidade,matricula,curso,fone,email])
+          continuar = str.lower (input("Continuar? [S/N]:"))
 
-def cadastrar_residente():
+def cadastrar_residente(alunos):
     opcao = ""
     while opcao != "3":
          print("**********************************")
@@ -129,10 +138,10 @@ def cadastrar_residente():
          opcao = input("INFORME À OPÇÂO:")
 
          if opcao == "1":
-             cadastrar_aluno()
+             cadastrar_aluno(alunos)
      
          elif opcao == "2":
-             listar_aluno()
+             listar_aluno(alunos)
 
          elif opcao == "3":
              print("Obrigado até a próxima!")
@@ -141,7 +150,8 @@ def cadastrar_residente():
              print("Opçãp Inválida!")
 
 
-def exibir_menuprincipal():
+
+def exibir_menuprincipal(alunos,equipamento):
     opcao = ""
     while opcao != "3":
          print("**********************************")
@@ -159,10 +169,10 @@ def exibir_menuprincipal():
 
 
          if opcao == "1":
-             cadastrar_residente()
+             cadastrar_residente(alunos)
      
          elif opcao == "2":
-             cadastrar_equipamento()
+             cadastrar_equipamento(equipamento)
 
 
          elif opcao == "3":
@@ -174,5 +184,5 @@ def exibir_menuprincipal():
 
 quarto = []
 equipamento = []
-nome = []
-exibir_menuprincipal()
+alunos = []
+exibir_menuprincipal(alunos,equipamento)
